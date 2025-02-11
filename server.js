@@ -1,5 +1,3 @@
-require('dotenv').config();  // Add this line at the top of your server.js
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -13,9 +11,10 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB connection using environment variable
-const mongoURI = process.env.MONGO_URI;
+// Hardcoded MongoDB URI (replacing process.env.MONGO_URI)
+const mongoURI = "mongodb+srv://ausiziba:Lobengula1@cluster0.u9d5c.mongodb.net/BusinessAdmin?retryWrites=true&w=majority";
 
+// MongoDB connection
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
